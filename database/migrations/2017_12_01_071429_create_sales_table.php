@@ -16,9 +16,9 @@ class CreateSalesTable extends Migration
         Schema::create('sales', function (Blueprint $table) {
             $table->integer('id');
             $table->string('address')->unique();
-            $table->decimal('price')->default(0);
-            $table->float('bedroom')->default(0);
-            $table->float('badroom')->dafault(0);
+            $table->integer('price')->default(0);
+            $table->float('bedroom', 4, 1)->default(0);
+            $table->float('badroom', 4, 1)->dafault(0);
             $table->string('type');
             $table->string('neighborhood');
 //            $table->timestamps();
