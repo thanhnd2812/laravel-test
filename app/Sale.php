@@ -8,6 +8,8 @@ class Sale extends Model
 {
     protected $guarded = [];
 
+    public $timestamps = false;
+
     public function scopeFilter($query, $filters) {
         foreach ($filters as $key => $value) {
 
