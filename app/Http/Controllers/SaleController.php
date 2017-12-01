@@ -17,6 +17,7 @@ class SaleController extends Controller
         $sales =  Sale::all();
 
         return view('sales.index', compact('sales'));
+        
     }
 
 
