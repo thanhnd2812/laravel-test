@@ -38,14 +38,16 @@ class SaleController extends Controller
                 if (Sale::where('id', '=', $data[0])->exists() ) {
                     continue;
                 }
+
                 $record = new Sale;
                 $record->id = $data[0];
+                $record->address = $data[2];
+                $record->type = $data[11];
                 $record->neighborhood = $data[12];
                 $record->price = $data[16];
                 $record->bedroom = $data[17];
                 $record->badroom = $data[18];
-                $record->type = $data[11];
-                $record->address = $data[2];
+
                 try {
                     $record->save();
                 }catch (Exception $e) {
