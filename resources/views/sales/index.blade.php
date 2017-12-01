@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container">
+        @include('sales.search')
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
@@ -35,6 +36,7 @@
                                 @endforeach
                                 </tbody>
                             </table>
+                            {{ $sales->links() }}
                         @else
                             Sorry, no data!!!
                         @endif

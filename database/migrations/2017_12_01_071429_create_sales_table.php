@@ -21,7 +21,7 @@ class CreateSalesTable extends Migration
             $table->float('badroom')->dafault(0);
             $table->string('type');
             $table->string('neighborhood');
-            $table->timestamps();
+//            $table->timestamps();
         });
     }
 

@@ -8,6 +8,7 @@ use Mockery\Exception;
 
 class SaleController extends Controller
 {
+    private $supportedFilters = ['neighborhood', 'bedroom', 'badroom', 'type', 'min_price', 'max_price'];
     public function __construct() {
 
     }
@@ -15,8 +16,11 @@ class SaleController extends Controller
     public function index() {
 
         $this->seeding();
-        $sales =  Sale::all();
 
+        $filters = request()->only($this->supportedFilters);
+        $sales =  Sale::filter($filters)->paginate(10);
+
+//        dd($sales);
         return view('sales.index', compact('sales'));
 
     }
