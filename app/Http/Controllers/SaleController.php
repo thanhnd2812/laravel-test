@@ -14,7 +14,6 @@ class SaleController extends Controller
 
     public function index() {
 
-        dd(database_path('database.sqlite'));
         $this->seeding();
         $sales =  Sale::all();
 
