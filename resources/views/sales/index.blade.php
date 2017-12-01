@@ -36,7 +36,7 @@
                                 @endforeach
                                 </tbody>
                             </table>
-                            {{ $sales->links() }}
+                            {{ $sales->appends($_GET)->links() }}
                         @else
                             Sorry, no data!!!
                         @endif
